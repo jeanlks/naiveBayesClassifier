@@ -54,7 +54,8 @@ testVirginica <- data[136:150,]
 
 
 #Plota Grafico Sepal.Lenght
-x<-0:10
+
+x<-seq(0, 10, by = 0.1)
 
 a<-gaussiana(x,trainingSetosa$Sepal.Length)
 b<-gaussiana(x,trainingVersicolor$Sepal.Length)
