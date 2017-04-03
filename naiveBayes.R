@@ -1,4 +1,4 @@
-csetwd("~/Documents/Software Engineering/UFG/mestrado/ARP/Aula 2 - BAYES")
+setwd("~/Documents/Software Engineering/UFG/mestrado/ARP/Aula 2 - BAYES/repositorio")
 data <- read.csv("iris.csv",header = FALSE);
 names(data) <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width", "Species")
 
