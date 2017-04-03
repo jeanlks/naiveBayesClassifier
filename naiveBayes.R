@@ -64,7 +64,8 @@ c<-gaussiana(x,trainingVirginica$Sepal.Length)
 plot(x,a, type="l", lwd=3, ylim=c(0,1.5*max(a,b,c)), xlab="Sepal Length")
 lines(x,b, type="l", lwd=3, col="Red")
 lines(x,c, type="l", lwd=3, col="Blue")
-
+legend(6, 1.5, legend=c("Setosa", "Versicolor","Virginica"),
+       col=c("black", "red","blue"), lwd=3, lty=1:1, cex=0.8)
 
 #Exercicio2 
 
