@@ -9,7 +9,7 @@ gaussiana <- function(x,vetor){
   exponent <- exp(-(((x-media)^2)/(2*(desvioPadrao^2))))
   return ((1/(sqrt(2*pi)*desvioPadrao))*exponent)
 }
-
+#Funcao de decisao, considera o maior argumento - ARGMAX
 decisao <-function(vetorDecisao){
   maior = which.max(vetorDecisao)
   if(maior==1){
@@ -23,11 +23,13 @@ decisao <-function(vetorDecisao){
   }
 }
 
+#Pega a probabilidade por cada classe e realiza o produtorio
 getProbabilidadePorClasse <- function(vetorEntrada,vetorDaClasse){
   probabilidade = NULL
   for(i in 1:4){
    probabilidade[i] <- gaussiana(vetorEntrada[i],vetorDaClasse[,i])
   }
+  #produtorio
   return(probabilidade[1]*probabilidade[2]*probabilidade[3]*probabilidade[4]*0.33)
 }
 getProbabilidades <- function(vetorEntrada){
@@ -37,7 +39,7 @@ getProbabilidades <- function(vetorEntrada){
   vetorDeProbabilidades[3] = getProbabilidadePorClasse(vetorEntrada,trainingVirginica[,-5])
   return(vetorDeProbabilidades)
 }
-
+#Recebe um vetor de entrada e deve retornar as probabilidades de cada elemento
 getPrediction <- function(vetorEntrada){
   probabilidades = getProbabilidades(vetorEntrada);
   return(decisao(probabilidades));
@@ -67,7 +69,7 @@ lines(x,c, type="l", lwd=3, col="Blue")
 legend(6, 1.5, legend=c("Setosa", "Versicolor","Virginica"),
        col=c("black", "red","blue"), lwd=3, lty=1:1, cex=0.8)
 
-#Exercicio2 
+#Exercicio2
 
 resultadoSetosaTest = NULL
 resultadoVirginicaTest = NULL
